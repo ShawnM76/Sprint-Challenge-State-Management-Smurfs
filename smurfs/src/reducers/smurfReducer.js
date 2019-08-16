@@ -2,6 +2,9 @@ import {
   FETCH_SMURFS_DATA_START,
   FETCH_SMURFS_DATA_SUCCESS,
   FETCH_SMURFS_DATA_FAILURE,
+  POST_SMURFS_DATA_START,
+  POST_SMURFS_DATA_SUCCESS,
+  POST_SMURFS_DATA_FAILURE,
 } from '../actions';
 
 const initialState = {
@@ -26,6 +29,25 @@ export const reducer = (state = initialState, action) => {
         error: '',
       };
     case FETCH_SMURFS_DATA_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false,
+      };
+    case POST_SMURFS_DATA_START:
+      return {
+        ...state,
+        isLoading: true,
+        error: '',
+      };
+    case POST_SMURFS_DATA_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        smurfs: action.payload,
+        error: '',
+      };
+    case POST_SMURFS_DATA_FAILURE:
       return {
         ...state,
         error: action.payload,
