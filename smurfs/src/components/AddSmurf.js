@@ -18,14 +18,6 @@ const AddSmurf = props => {
   const handleSubmit = event => {
     event.preventDefault();
     props.storeData(smurf);
-    // axios
-    //   .post('http://localhost:3333/smurfs', smurf)
-    //   .then(results => {
-    //     console.log(results);
-    //   })
-    //   .catch(error => {
-    //     console.log('O no there is an error!', error);
-    //   });
   };
 
   return (
